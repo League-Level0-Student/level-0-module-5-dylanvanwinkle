@@ -46,22 +46,26 @@ public class GuessingPi {
 					System.out.println("correct");
 					trys = 2;
 					score++;
+					if (score == 52) {
+						System.out.println("You win!!!");
+						break;
+					}
 				} else {
 					System.out.println("incorrect");
-					if(score > 0 && trys == 1) {
+					if (score > 0 && trys == 1) {
 						score--;
 					}
-					if(trys > 1) {
+					if (trys > 1) {
 						System.out.println("Do you want to keep trying(yes or no)");
 						Input = s.nextLine();
-						if(Input.equalsIgnoreCase("no")) {
+						if (Input.equalsIgnoreCase("no")) {
 							break;
 						}
 						i--;
 						trys--;
 						System.out.println("You have " + trys + " try left.");
-					}else {
-					break;
+					} else {
+						break;
 					}
 				}
 				// 7. If they are correct, print out "correct".
@@ -73,6 +77,6 @@ public class GuessingPi {
 				System.out.println("Invaid input try again.");
 			}
 		}
-	System.out.println("Your score is " + score);
+		System.out.println("Your score is " + score);
 	}
 }
